@@ -1,8 +1,11 @@
-h1 {
-    font: bold;
-    font-style: italic;
+* {
+    font-family:sans-serif
 }
 
-p {
-    color: green;
+body {
+    margin: 0;
+}
+
+main {
+    margin:5px;
 }
