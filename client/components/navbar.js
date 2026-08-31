@@ -1,57 +1,31 @@
-const headerTemplate = document.createElement('template');
+const navbarTemplate = document.createElement('template');
 
-headerTemplate.innerHTML =
+navbarTemplate.innerHTML =
 `
-<style>
-nav {
-
-    background-color: #0a0a23;
-    height:40px;
-    display: flex;
-    align-items:center
-
-}
-
-ul {
-    padding: 0;
-}
-
-ul li {
-    list-style: none;
-    display: inline;
-}
-
-a {
-    color:azure;
-    font-weight: 500;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-a:hover {
-    background-color: grey;
-    border: 9px solid grey;
-    margin-inline: 1px;
-}
-</style>
-<header>
-	<nav>
-		<ul>
-			<li><a href="/">Welcome</a></li><li><a href="weights.html">Weights</a></li>
-		</ul>
-	</nav>
-</header>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<nav class="navbar navbar-expand-sm bg-light">
+    <div class="container-fluid justify-content-center">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="weights.html">Weights</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 `
 
-class Header extends HTMLElement {
+class Navbar extends HTMLElement {
 	constructor() {
 		super();
 	}
 
 	connectedCallback() {
 		const shadowRoot = this.attachShadow( {mode: 'closed'})
-		shadowRoot.appendChild(headerTemplate.content);
+		shadowRoot.appendChild(navbarTemplate.content);
 	}
 }
 
-customElements.define('header-component', Header);
+customElements.define('navbar-component', Navbar);
