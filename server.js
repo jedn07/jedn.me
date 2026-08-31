@@ -1,7 +1,5 @@
 const express = require('express')
 const server = express()
-server.use(express.static('client'))
-
 
 server.get('/healthcheck', (req, res) => {
     const data = {
